@@ -1,0 +1,24 @@
+{
+    "name": "AI Coding Tutor Development",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10", // Or a more recent Python version
+    "features": {
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "lts" // Install the latest LTS version of Node.js
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-vscode.vscode-typescript-react",
+          "esbenp.prettier-vscode",
+          "dbaeumer.vscode-eslint",
+          "bradlc.vscode-tailwindcss"
+          // Add other useful extensions like Docker, GitLens etc.
+        ]
+      }
+    },
+    "forwardPorts": [3000, 8000], // Forward default ports for React and FastAPI
+    "postCreateCommand": "pip install --upgrade pip && pip install -r backend/requirements.txt && npm install --prefix frontend", // Install dependencies after creation
+    "remoteUser": "codespace"
+  }
